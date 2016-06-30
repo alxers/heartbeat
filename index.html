@@ -1,0 +1,12 @@
+<script>
+  const HR_STEP = 5;
+  const RESTING_HR = 60;
+
+  let currentHR = randHR((RESTING_HR - HR_STEP), (RESTING_HR + HR_STEP), HR_STEP);
+
+  function randHR(minHR, maxHR, step) {
+    return () => Math.floor(Math.random() * (maxHR - minHR) + minHR);
+  }
+
+  setInterval(()=>{ console.log(currentHR())}, 1000)
+</script>
