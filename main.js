@@ -21,7 +21,7 @@ const ZONE_5_MAX_HR = ZONE_5_MIN_HR + 14;
 // Returns random value within given range
 let randHR = (minHR, maxHR) => () => Math.floor(Math.random() * (maxHR - minHR) + minHR);
 
-let currentHR = randHR(RESTING_MIN_HR, RESTING_MAX_HR, HR_STEP);
+let getCurrentHR = randHR(RESTING_MIN_HR, RESTING_MAX_HR, HR_STEP);
 let randBoolean = () => Math.round(Math.random());
 let heartPump = (hr) => {
   if (randBoolean()) {
@@ -54,4 +54,4 @@ let displayHR = (currHR, minHR, maxHR) => {
   }, 1000)
 };
 
-displayHR(currentHR(), 55, 65);
+displayHR(getCurrentHR(), 55, 65);
